@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sayali Kamble</title>
+    <!--
+      GitHub Pages serves 404.html for missing paths.
+      This script encodes the path into a query string and redirects to index.html,
+      where the companion script in index.html restores the original URL for React Router.
+      Technique: https://github.com/rafgraph/spa-github-pages
+    -->
+    <script>
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.host + l.pathname.split('/').slice(0, 1).join('/') +
+        '/?p=/' + l.pathname.slice(1).replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
